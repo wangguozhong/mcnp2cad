@@ -20,7 +20,8 @@ CXXOBJS = mcnp2cad.o MCNPInput.o volumes.o geometry.o ProgOptions.o
 CXXFLAGS = -g -std=c++11 -Wall -Wextra -DUSING_CGMA -DHAVE_IGEOM_CONE -I${ARMADILLO_BASE_DIR}/include
 
 
-LDFLAGS = ${IGEOM_LIBS} 
+# LDFLAGS = ${IGEOM_LIBS} 
+LDFLAGS = -L${CGM_BASE_DIR}/lib -liGeom -lcgm -ldl
 LDFLAGS += -L${ARMADILLO_BASE_DIR}/lib -larmadillo
 
 mcnp2cad: ${CXXOBJS} Makefile
