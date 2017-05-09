@@ -10,6 +10,7 @@ INCLUDEPATH += .
 # ARMADILLO_BASE_DIR = /path/to/installed/armadillo
 CGM_BASE_DIR = /usr/local
 ARMADILLO_BASE_DIR = /usr
+OCE_DIR = /usr/
 
 # Input
 HEADERS += dataref.hpp \
@@ -27,6 +28,12 @@ DEFINES += USING_CGMA HAVE_IGEOM_CONE
 INCLUDEPATH += $${ARMADILLO_BASE_DIR}/include
 INCLUDEPATH += $${CGM_BASE_DIR}/include
 INCLUDEPATH += $${CGM_BASE_DIR}/include/cgm
+INCLUDEPATH += $${OCE_DIR}/include/oce
+
 
 LIBS = -L$${CGM_BASE_DIR}/lib -liGeom -lcgm -ldl
 LIBS += -L$${ARMADILLO_BASE_DIR}/lib -larmadillo
+LIBS += -L$${OCE_DIR}/lib -lTKSTL -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKIGES -lTKXSBase -lTKBinL -lTKLCAF  \
+        -lTKCDF -lTKCAF -lTKHLR -lTKOffset -lTKShHealing -lTKFillet -lTKFeat -lTKBool -lTKBO -lTKPrim -lTKMesh -lTKTopAlgo -lTKGeomAlgo -lTKBRep    \
+        -lTKGeomBase -lTKG3d -lTKG2d -lTKMath -lTKernel
+
